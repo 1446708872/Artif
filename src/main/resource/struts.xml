@@ -14,15 +14,9 @@
                 <param name="root">result</param>
             </result>
         </action>
+        <action name="mian" class="userAction" method="mian">
+            <result>/mian.jsp</result>
+        </action>
     </package>
 
-    <!--<interceptors>-->
-        <!--<interceptor name="CheckLoginInterceptor" class="interceptor.UserInterceptor">-->
-            <!--<param name="excludeMethods">login</param>-->
-        <!--</interceptor>-->
-        <!--<interceptor-stack name="interceptor">-->
-            <!--<interceptor-ref name="defaultStack"/>-->
-            <!--<interceptor-ref name="CheckLoginInterceptor"/>-->
-        <!--</interceptor-stack>-->
-    <!--</interceptors>-->
 </struts>

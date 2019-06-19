@@ -13,14 +13,14 @@ import java.util.List;
 public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 
     @Override
-    public Student checkStudent(Student student) {
+    public Student queryStudent(Student student) {
         Student stu;
         try {
-          stu = this.getHibernateTemplate().get(Student.class, student.getUsername());
+            stu = this.getHibernateTemplate().get(Student.class, student.getStuId());
         }catch (Exception e){
             e.printStackTrace();
             return null;
         }
-        return student;
+        return stu;
     }
 }

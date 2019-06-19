@@ -70,8 +70,18 @@
 	$(function () {
 		$("#sub").click(function () {
 			if(checkUser()){
-				$.post("login",{username:$("#username").val(),password:$("#password").val()},function(data){
-					alert(data)
+				$.post("login",{stuId:$("#stuId").val(),password:$("#password").val()},function(data){
+					switch (data) {
+						case "1":
+								$("#stuId").val(""); exception("输入的学号不存在！")
+							break
+						case "2":
+								$("#password").val(""); exception("输入的密码与学号不符！")
+							break
+						case "0":
+							window.location.href ="${pageContext.request.contextPath}/mian"
+							break
+					}
 				})
 			}
 		})
@@ -80,7 +90,7 @@
 	//判断用户信息是否输入
 	function checkUser() {
 		$("#error").hide();
-		if($("#username").val() ==""){
+		if($("#stuId").val() ==""){
 			exception("请输入学号！")
 			return false;
 		}
