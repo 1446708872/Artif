@@ -7,8 +7,28 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
     <constant name="struts.devMode" value="true"></constant>
 
+    <package name="all" extends="struts-default,json-default">
+        <interceptors>
+            <!-- 自定义的拦截器 -->
+            <interceptor name="my_interceptor" class="userInterceptor"></interceptor>
+            <!-- 定义拦截器栈 -->
+            <interceptor-stack name="myinterceptor_stack">
+                <!-- 默认拦截器 -->
+                <interceptor-ref name="defaultStack"/>
+                <!-- 自定义拦截器 -->
+                <interceptor-ref name="my_interceptor"/>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 默认拦截器 -->
+        <default-interceptor-ref name="myinterceptor_stack"/>
+        <!-- 全局结果集 -->
+        <global-results>
+            <result name="login">/login.jsp</result>
+        </global-results>
+    </package>
 
-    <package name="LoginAction" extends="struts-default,json-default">
+
+    <package name="LoginAction" extends="all" namespace="/" strict-method-invocation="false">
         <action name="login" class="userAction" method="login">
             <result type="json">
                 <param name="root">result</param>

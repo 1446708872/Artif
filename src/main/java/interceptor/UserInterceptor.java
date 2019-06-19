@@ -6,13 +6,12 @@ import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
 import model.Student;
 import org.apache.struts2.ServletActionContext;
 
-public class UserInterceptor extends MethodFilterInterceptor implements ModelDriven<Student> {
+public class UserInterceptor extends MethodFilterInterceptor{
 
-    Student student = new Student();
 
     @Override
     protected String doIntercept(ActionInvocation actionInvocation) throws Exception {
-        System.out.println(student.toString());
+        System.out.println(ServletActionContext.getRequest().getServletPath());
 //        User user = (User)  ServletActionContext.getRequest().getSession().getAttribute("user");
 //        if(user != null){
 //            return actionInvocation.invoke();
@@ -21,8 +20,4 @@ public class UserInterceptor extends MethodFilterInterceptor implements ModelDri
         return actionInvocation.invoke();
     }
 
-    @Override
-    public Student getModel() {
-        return student;
-    }
 }
