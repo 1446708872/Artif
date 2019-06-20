@@ -81,7 +81,14 @@
 						case "0":
 							window.location.href ="${pageContext.request.contextPath}/mian"
 							break
+						case "3":
+							exception("服务器错误请联系老师处理！")
+							break;
+						case "4":
+							exception("此浏览器已有账户登陆，请先退出之前账户进行登陆！")
+							break;
 					}
+					codeCan();
 				})
 			}
 		})

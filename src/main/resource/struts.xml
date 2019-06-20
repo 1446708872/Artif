@@ -29,13 +29,16 @@
 
 
     <package name="LoginAction" extends="all" namespace="/" strict-method-invocation="false">
-        <action name="login" class="userAction" method="login">
-            <result type="json">
+        <action name="*" class="userAction" method="{1}">
+            <result name="json" type="json">
                 <param name="root">result</param>
             </result>
-        </action>
-        <action name="mian" class="userAction" method="mian">
-            <result>/mian.jsp</result>
+            <result name="mian">
+                /{1}.jsp
+            </result>
+            <result name="exit">
+                /login.jsp
+            </result>
         </action>
     </package>
 

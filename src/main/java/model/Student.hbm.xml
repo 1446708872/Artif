@@ -11,11 +11,10 @@
         <property name="sex" column="sex"/>
         <property name="question" column="question"/>
         <property name="answer" column="answer"/>
-        <property name="stuClassId" column="stu_class_id"/>
 
-        <many-to-one name="clazz" class="model.Clazz" column="stu_class_id" not-null="true"  insert="false" update="false"></many-to-one>
+        <many-to-one name="clazz" class="model.Clazz" column="stu_class_id" not-null="true" lazy="false"  insert="false" update="false"></many-to-one>
 
-        <set name="taotixinxis">
+        <set name="taotixinxis" lazy="false">
             <key column="taoti_stu_id"></key>
             <one-to-many class="model.Taotixinxi"/>
         </set>

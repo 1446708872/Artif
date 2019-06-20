@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!-- rankingList -->
 <div class="record-head">
 	<div class="rside-rh">

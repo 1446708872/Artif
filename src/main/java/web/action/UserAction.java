@@ -42,6 +42,12 @@ import javax.servlet.http.HttpSession;
 
     public String login() {
         Integer integer=0;
+
+        if(session.getAttribute("student")!=null){
+            integer =4;
+            return "json";
+        }
+
         try {
             Student queryStudent = userService.checkStudent(student);
             if(queryStudent!=null){ ;
@@ -59,13 +65,17 @@ import javax.servlet.http.HttpSession;
             integer=3;
         }
         result = integer.toString();
-        return SUCCESS;
+        return "json";
     }
 
     public String mian(){
-        ValueStack valueStack = ActionContext.getContext().getValueStack();
-        valueStack.push(session.getAttribute("student"));
-        return SUCCESS;
+        return "mian";
     }
 
+    public String exit(){
+        if(session.getAttribute("student")!=null){
+            session.removeAttribute("student");
+        }
+        return "exit";
+    }
 }

@@ -43,8 +43,8 @@
 				</div>
 				<div class="rtop">
 					<ul>
-						<li><a href="">退出</a></li>
-						<li>欢迎回来<span>XXX</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li><a href="${pageContext.request.contextPath}/exit">退出</a></li>
+						<li>欢迎回来:<span><s:property value="#session.student.username"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					</ul>
 				</div>
 			</div>

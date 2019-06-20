@@ -9,6 +9,7 @@
             <generator class="native"/>
         </id>
         <property name="classValue" column="class_value"/>
+
         <set name="students">
             <key column="stu_class_id"/>
             <one-to-many class="model.Student"/>

@@ -21,8 +21,6 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
             e.printStackTrace();
             return null;
         }
-        System.out.println(stu.getTaotixinxis().toString());
-        System.out.println(stu.getClazz().toString());
         return stu;
     }
 }

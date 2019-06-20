@@ -1,5 +1,7 @@
 package web.Filter;
 
+import model.Student;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,16 +20,17 @@ public class filter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest)request;
         HttpServletResponse httpServletResponse = (HttpServletResponse)response;
 
+        Student student = (Student) httpServletRequest.getSession().getAttribute("student");
         String url = httpServletRequest.getRequestURI();
-        if (url != null && url.endsWith(".jsp"))
-        {
-            if(httpServletRequest.getServletPath().equals("/login.jsp")){
-                chain.doFilter(httpServletRequest, httpServletResponse);
-            }else{
+
+        if(student == null && !url.endsWith("login.jsp")){
                 httpServletRequest.getRequestDispatcher("/login.jsp").forward(request, response);
+        }else {
+            if(!url.endsWith("mian.jsp")){
+                chain.doFilter(httpServletRequest, httpServletResponse);
             }
+            return;
         }
-        chain.doFilter(httpServletRequest, httpServletResponse);
     }
 
     @Override

@@ -10,7 +10,6 @@ public class Student {
     private String sex;
     private String question;
     private String answer;
-    private long stuClassId;
     private Clazz clazz;
     private Set<Taotixinxi> taotixinxis;
 
@@ -63,14 +62,6 @@ public class Student {
         this.answer = answer;
     }
 
-    public long getStuClassId() {
-        return stuClassId;
-    }
-
-    public void setStuClassId(long stuClassId) {
-        this.stuClassId = stuClassId;
-    }
-
     public Clazz getClazz() {
         return clazz;
     }
@@ -93,7 +84,6 @@ public class Student {
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
         return stuId == student.stuId &&
-                stuClassId == student.stuClassId &&
                 Objects.equals(username, student.username) &&
                 Objects.equals(password, student.password) &&
                 Objects.equals(sex, student.sex) &&
@@ -110,12 +100,11 @@ public class Student {
                 ", sex='" + sex + '\'' +
                 ", question='" + question + '\'' +
                 ", answer='" + answer + '\'' +
-                ", stuClassId=" + stuClassId +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(stuId, username, password, sex, question, answer, stuClassId);
+        return Objects.hash(stuId, username, password, sex, question, answer);
     }
 }
