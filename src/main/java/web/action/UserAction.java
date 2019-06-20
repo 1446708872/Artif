@@ -45,6 +45,7 @@ import javax.servlet.http.HttpSession;
 
         if(session.getAttribute("student")!=null){
             integer =4;
+            result = integer.toString();
             return "json";
         }
 
