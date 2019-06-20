@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 
     public void setStudent(Student student) { this.student = student; }
 
-        //session
+    //session
     private HttpSession session = ServletActionContext.getRequest().getSession();
 
     //注入模型驱动
