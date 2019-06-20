@@ -11,6 +11,7 @@
         <property name="sex" column="sex"/>
         <property name="question" column="question"/>
         <property name="answer" column="answer"/>
+        <property name="stuClassId" column="stu_class_id"/>
 
         <many-to-one name="clazz" class="model.Clazz" column="stu_class_id" not-null="true"  insert="false" update="false"></many-to-one>
 

@@ -4,7 +4,6 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Student {
-    private long id;
     private long stuId;
     private String username;
     private String password;
@@ -15,13 +14,6 @@ public class Student {
     private Clazz clazz;
     private Set<Taotixinxi> taotixinxis;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public long getStuId() {
         return stuId;
@@ -100,8 +92,7 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return id == student.id &&
-                stuId == student.stuId &&
+        return stuId == student.stuId &&
                 stuClassId == student.stuClassId &&
                 Objects.equals(username, student.username) &&
                 Objects.equals(password, student.password) &&
@@ -113,7 +104,6 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
                 ", stuId=" + stuId +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
@@ -126,6 +116,6 @@ public class Student {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, stuId, username, password, sex, question, answer, stuClassId);
+        return Objects.hash(stuId, username, password, sex, question, answer, stuClassId);
     }
 }

@@ -33,6 +33,7 @@
 				    <li ><a href="javascript:;" id="rankingList" onclick="side_na(this)"><span>排&nbsp;&nbsp;行&nbsp;&nbsp;榜</span></a></li>
 				    <li ><a href="javascript:;" id="formativeTest" onclick="side_na(this)"><span>阶段检测</span></a></li>
 				    <li ><a href="javascript:;" id="onlineTesting" onclick="side_na(this)"><span>在线测试</span></a></li>
+				<s:debug></s:debug>
 			</ul>
 		</div>
 		<div class="rside">
