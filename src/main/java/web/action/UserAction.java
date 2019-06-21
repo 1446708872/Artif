@@ -2,6 +2,7 @@ package web.action;
 
 import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.ActionSupport;
+import model.Student;
 import org.apache.struts2.ServletActionContext;
 import service.UserService;
 

@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.UserDao;
+import model.Student;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
