@@ -20,19 +20,13 @@ public class filter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest)request;
         HttpServletResponse httpServletResponse = (HttpServletResponse)response;
 
-        Student student = (Student) httpServletRequest.getSession().getAttribute("student");
         String url = httpServletRequest.getRequestURI();
 
-        if(url.endsWith(".css"))chain.doFilter(httpServletRequest, httpServletResponse);
-
-        if(student == null && !url.endsWith("login.jsp")){
-                httpServletRequest.getRequestDispatcher("/login.jsp").forward(request, response);
-        }else {
-            if(!url.endsWith("mian.jsp")){
-                chain.doFilter(httpServletRequest, httpServletResponse);
-            }
+        if(url.endsWith("mian.jsp")){
             return;
         }
+
+        chain.doFilter(httpServletRequest, httpServletResponse);
     }
 
     @Override

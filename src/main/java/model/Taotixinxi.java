@@ -2,15 +2,17 @@ package model;
 
 import java.sql.Timestamp;
 import java.util.Objects;
-import java.util.Set;
 
 public class Taotixinxi {
     private long taotiId;
     private String taotiName;
-    private long taotiLessonId;
     private Timestamp taotiJoinTime;
-    private long taotiStuId;
-    private Student students;
+    private String taotiCId;
+    private String taotiJId;
+    private String taotiGapId;
+    private String taotiPId;
+    private Sturesult sturesultByTaotiId;
+    private Student studentByTaotiStuId;
 
     public long getTaotiId() {
         return taotiId;
@@ -28,14 +30,6 @@ public class Taotixinxi {
         this.taotiName = taotiName;
     }
 
-    public long getTaotiLessonId() {
-        return taotiLessonId;
-    }
-
-    public void setTaotiLessonId(long taotiLessonId) {
-        this.taotiLessonId = taotiLessonId;
-    }
-
     public Timestamp getTaotiJoinTime() {
         return taotiJoinTime;
     }
@@ -44,20 +38,36 @@ public class Taotixinxi {
         this.taotiJoinTime = taotiJoinTime;
     }
 
-    public long getTaotiStuId() {
-        return taotiStuId;
+    public String getTaotiCId() {
+        return taotiCId;
     }
 
-    public void setTaotiStuId(long taotiStuId) {
-        this.taotiStuId = taotiStuId;
+    public void setTaotiCId(String taotiCId) {
+        this.taotiCId = taotiCId;
     }
 
-    public Student getStudents() {
-        return students;
+    public String getTaotiJId() {
+        return taotiJId;
     }
 
-    public void setStudents(Student students) {
-        this.students = students;
+    public void setTaotiJId(String taotiJId) {
+        this.taotiJId = taotiJId;
+    }
+
+    public String getTaotiGapId() {
+        return taotiGapId;
+    }
+
+    public void setTaotiGapId(String taotiGapId) {
+        this.taotiGapId = taotiGapId;
+    }
+
+    public String getTaotiPId() {
+        return taotiPId;
+    }
+
+    public void setTaotiPId(String taotiPId) {
+        this.taotiPId = taotiPId;
     }
 
     @Override
@@ -66,14 +76,32 @@ public class Taotixinxi {
         if (o == null || getClass() != o.getClass()) return false;
         Taotixinxi that = (Taotixinxi) o;
         return taotiId == that.taotiId &&
-                taotiLessonId == that.taotiLessonId &&
-                taotiStuId == that.taotiStuId &&
                 Objects.equals(taotiName, that.taotiName) &&
-                Objects.equals(taotiJoinTime, that.taotiJoinTime);
+                Objects.equals(taotiJoinTime, that.taotiJoinTime) &&
+                Objects.equals(taotiCId, that.taotiCId) &&
+                Objects.equals(taotiJId, that.taotiJId) &&
+                Objects.equals(taotiGapId, that.taotiGapId) &&
+                Objects.equals(taotiPId, that.taotiPId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taotiId, taotiName, taotiLessonId, taotiJoinTime, taotiStuId);
+        return Objects.hash(taotiId, taotiName, taotiJoinTime, taotiCId, taotiJId, taotiGapId, taotiPId);
+    }
+
+    public Sturesult getSturesultByTaotiId() {
+        return sturesultByTaotiId;
+    }
+
+    public void setSturesultByTaotiId(Sturesult sturesultByTaotiId) {
+        this.sturesultByTaotiId = sturesultByTaotiId;
+    }
+
+    public Student getStudentByTaotiStuId() {
+        return studentByTaotiStuId;
+    }
+
+    public void setStudentByTaotiStuId(Student studentByTaotiStuId) {
+        this.studentByTaotiStuId = studentByTaotiStuId;
     }
 }

@@ -45,12 +45,4 @@ public class Clazz {
     public int hashCode() {
         return Objects.hash(classId, classValue);
     }
-
-    @Override
-    public String toString() {
-        return "Clazz{" +
-                "classId=" + classId +
-                ", classValue='" + classValue + '\'' +
-                '}';
-    }
 }

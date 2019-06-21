@@ -54,6 +54,7 @@ import javax.servlet.http.HttpSession;
             if(queryStudent!=null){ ;
                 if(student.getPassword().equals(queryStudent.getPassword())){
                     session.setAttribute("student",queryStudent);
+                    System.out.println(queryStudent);
                     integer = 0;
                 }else {
                     integer = 2;

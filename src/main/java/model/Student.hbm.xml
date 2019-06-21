@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="model.Student" table="student" schema="exam">
-        <id name="stuId" column="stu_id"/>
+        <id name="stuId" column="stu_id">
+            <generator class="native"/>
+        </id>
         <property name="username" column="username"/>
         <property name="password" column="password"/>
         <property name="sex" column="sex"/>
@@ -14,9 +16,15 @@
 
         <many-to-one name="clazz" class="model.Clazz" column="stu_class_id" not-null="true" lazy="false"  insert="false" update="false"></many-to-one>
 
-        <set name="taotixinxis" lazy="false">
+        <set name="taotixinxis" lazy="false" cascade="delete">
             <key column="taoti_stu_id"></key>
             <one-to-many class="model.Taotixinxi"/>
         </set>
+
+        <set name="sturesults" lazy="false" cascade="delete">
+            <key column="stuId"></key>
+            <one-to-many class="model.Sturesult"/>
+        </set>
+
     </class>
 </hibernate-mapping>

@@ -9,11 +9,14 @@
             <generator class="native"/>
         </id>
         <property name="taotiName" column="taoti_name"/>
-        <property name="taotiLessonId" column="taoti_LessonId"/>
         <property name="taotiJoinTime" column="taoti_joinTime"/>
-        <!--<property name="taotiStuId" column="taoti_stu_id"/>-->
-
-      <many-to-one name="students" column="taoti_stu_id" class="model.Student"  not-null="true"  insert="false" update="false"/>
-
+        <property name="taotiCId" column="taoti_c_id"/>
+        <property name="taotiJId" column="taoti_j_id"/>
+        <property name="taotiGapId" column="taoti_gap_id"/>
+        <property name="taotiPId" column="taoti_p_id"/>
+        <many-to-one name="studentByTaotiStuId" class="model.Student">
+            <column name="taoti_stu_id"/>
+        </many-to-one>
+        <one-to-one name="sturesultByTaotiId" class="model.Sturesult"/>
     </class>
 </hibernate-mapping>

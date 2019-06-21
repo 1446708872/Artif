@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.Sturesult" table="sturesult" schema="exam">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="resChoice" column="resChoice"/>
+        <property name="resCriterion" column="resCriterion"/>
+        <property name="resGapFilling" column="resGapFilling"/>
+        <property name="resProgramme" column="resProgramme"/>
+        <property name="resTotal" column="resTotal"/>
+        <property name="joinTime" column="joinTime"/>
+
+        <many-to-one name="studentByStuId" class="model.Clazz" column="stuId" not-null="true" lazy="false"  insert="false" update="false"></many-to-one>
+    </class>
+</hibernate-mapping>

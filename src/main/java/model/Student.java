@@ -12,7 +12,7 @@ public class Student {
     private String answer;
     private Clazz clazz;
     private Set<Taotixinxi> taotixinxis;
-
+    private Set<Sturesult> sturesults;
 
     public long getStuId() {
         return stuId;
@@ -62,9 +62,7 @@ public class Student {
         this.answer = answer;
     }
 
-    public Clazz getClazz() {
-        return clazz;
-    }
+    public Clazz getClazz() { return clazz; }
 
     public void setClazz(Clazz clazz) {
         this.clazz = clazz;
@@ -76,6 +74,14 @@ public class Student {
 
     public void setTaotixinxis(Set<Taotixinxi> taotixinxis) {
         this.taotixinxis = taotixinxis;
+    }
+
+    public Set<Sturesult> getSturesults() {
+        return sturesults;
+    }
+
+    public void setSturesults(Set<Sturesult> sturesults) {
+        this.sturesults = sturesults;
     }
 
     @Override
@@ -92,19 +98,20 @@ public class Student {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(stuId, username, password, sex, question, answer);
+    }
+
+    @Override
     public String toString() {
         return "Student{" +
-                ", stuId=" + stuId +
+                "stuId=" + stuId +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", sex='" + sex + '\'' +
                 ", question='" + question + '\'' +
                 ", answer='" + answer + '\'' +
+                ", clazz=" + clazz +
                 '}';
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(stuId, username, password, sex, question, answer);
     }
 }

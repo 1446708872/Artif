@@ -41,6 +41,7 @@
                 <value>classpath:model/Clazz.hbm.xml</value>
                 <value>classpath:model/Student.hbm.xml</value>
                 <value>classpath:model/Taotixinxi.hbm.xml</value>
+                <value>classpath:model/Sturesult.hbm.xml</value>
             </list>
         </property>
     </bean>
