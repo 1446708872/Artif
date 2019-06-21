@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.Choice" table="choice" schema="exam">
+        <id name="cType" column="c_type"/>
+        <property name="cId" column="c_id"/>
+        <property name="cSubject" column="c_subject"/>
+        <property name="optionA" column="optionA"/>
+        <property name="optionB" column="optionB"/>
+        <property name="optionC" column="optionC"/>
+        <property name="optionD" column="optionD"/>
+        <property name="cAnswer" column="c_answer"/>
+        <property name="cNote" column="c_note"/>
+        
+        <many-to-one name="topicType" class="model.TopicType" column="topic_type_id"/>
+    </class>
+</hibernate-mapping>
