@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.TopicType" table="topic_type" schema="exam">
+        <id name="id" column="id"/>
+        <property name="value" column="value"/>
+        
+        <!--配置套题类型与各题一对多关系-->
+        <set name="choiceSet">
+            <key column="id"></key>
+            <one-to-many class="model.Choice"></one-to-many>
+        </set>
+
+        <set name="gapFillingSet">
+            <key column="id"></key>
+            <one-to-many class="model.GapFilling"></one-to-many>
+        </set>
+
+        <set name="judieSet">
+            <key column="id"></key>
+            <one-to-many class="model.Judje"></one-to-many>
+        </set>
+
+        <set name="programmeSet">
+            <key column="id"></key>
+            <one-to-many class="model.Programme"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

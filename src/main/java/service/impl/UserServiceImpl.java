@@ -1,7 +1,6 @@
 package service.impl;
 
 import dao.UserDao;
-import model.Student;
 import service.UserService;
 
 public class UserServiceImpl implements UserService {

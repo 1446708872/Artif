@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.GapFilling" table="gap_filling" schema="exam">
+        <id name="gapType" column="gap_type"/>
+        <property name="gapId" column="gap_id"/>
+        <property name="gapSubject" column="gap_subject"/>
+        <property name="gapAnswer" column="gap_answer"/>
+        <property name="gapNote" column="gap_note"/>
+
+        <many-to-one name="topicType" class="model.TopicType" column="topic_type_id"/>
+    </class>
+</hibernate-mapping>

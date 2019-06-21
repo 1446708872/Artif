@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.Programme" table="programme" schema="exam">
+        <id name="pType" column="p_type"/>
+        <property name="pId" column="p_id"/>
+        <property name="pSubject" column="p_subject"/>
+        <property name="pAnswer" column="p_answer"/>
+        <property name="pNote" column="p_note"/>
+
+        <many-to-one name="topicType" class="model.TopicType" column="topic_type_id"/>
+    </class>
+</hibernate-mapping>

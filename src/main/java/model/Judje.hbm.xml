@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.Judje" table="judje" schema="exam">
+        <id name="jType" column="j_type"/>
+        <property name="jId" column="j_id"/>
+        <property name="jSubject" column="j_subject"/>
+        <property name="optionA" column="optionA"/>
+        <property name="optionB" column="optionB"/>
+        <property name="jAnswer" column="j_answer"/>
+        <property name="jNote" column="j_note"/>
+
+        <many-to-one name="topicType" class="model.TopicType" column="topic_type_id"/>
+    </class>
+</hibernate-mapping>
